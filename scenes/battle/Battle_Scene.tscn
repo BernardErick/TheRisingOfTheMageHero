@@ -1,16 +1,66 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=70 format=2]
 
 [ext_resource path="res://assets/backgrounds/forest.png" type="Texture" id=1]
 [ext_resource path="res://assets/HUD/heart.png" type="Texture" id=2]
 [ext_resource path="res://assets/Font/AGoblinAppears-o2aV.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://assets/HUD/potion.png" type="Texture" id=4]
-[ext_resource path="res://assets/GUI/button_menu_pressed.png" type="Texture" id=5]
-[ext_resource path="res://assets/GUI/battle_menu.png" type="Texture" id=6]
-[ext_resource path="res://assets/GUI/button_menu_normal.png" type="Texture" id=7]
-[ext_resource path="res://assets/GUI/button_menu_hover.png" type="Texture" id=8]
-[ext_resource path="res://assets/Font/PixelOperatorSC.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://assets/HUD/mana.png" type="Texture" id=4]
+[ext_resource path="res://assets/GUI/exit_button.png" type="Texture" id=5]
+[ext_resource path="res://assets/GUI/button_tartaruga.png" type="Texture" id=6]
+[ext_resource path="res://assets/GUI/exit_button2.png" type="Texture" id=7]
+[ext_resource path="res://assets/effects/tigre/garras7.png" type="Texture" id=8]
+[ext_resource path="res://assets/effects/tigre/garras16.png" type="Texture" id=9]
 [ext_resource path="res://scripts/Battle_Scene_Script.gd" type="Script" id=10]
 [ext_resource path="res://assets/player/Animations/Idle/Idle1.tres" type="Texture" id=11]
+[ext_resource path="res://assets/GUI/button_tartaruga2.png" type="Texture" id=12]
+[ext_resource path="res://assets/GUI/button_fenix.png" type="Texture" id=13]
+[ext_resource path="res://assets/GUI/button_fenix2.png" type="Texture" id=14]
+[ext_resource path="res://assets/GUI/menu_semi_perfect.png" type="Texture" id=15]
+[ext_resource path="res://assets/GUI/button_tigre2.png" type="Texture" id=16]
+[ext_resource path="res://assets/GUI/button_urso.png" type="Texture" id=17]
+[ext_resource path="res://assets/GUI/button_urso2.png" type="Texture" id=18]
+[ext_resource path="res://assets/GUI/button_tigre.png" type="Texture" id=19]
+[ext_resource path="res://assets/GUI/StatusBar.png" type="Texture" id=20]
+[ext_resource path="res://assets/effects/tigre/garras1.png" type="Texture" id=21]
+[ext_resource path="res://assets/effects/tigre/garras23.png" type="Texture" id=22]
+[ext_resource path="res://assets/effects/tigre/garras19.png" type="Texture" id=23]
+[ext_resource path="res://assets/effects/tigre/garras22.png" type="Texture" id=24]
+[ext_resource path="res://assets/effects/tigre/garras26.png" type="Texture" id=25]
+[ext_resource path="res://assets/effects/tigre/garras20.png" type="Texture" id=26]
+[ext_resource path="res://assets/effects/tigre/garras6.png" type="Texture" id=27]
+[ext_resource path="res://assets/effects/tigre/garras13.png" type="Texture" id=28]
+[ext_resource path="res://assets/effects/tigre/garras10.png" type="Texture" id=29]
+[ext_resource path="res://assets/effects/tigre/garras14.png" type="Texture" id=30]
+[ext_resource path="res://assets/effects/tigre/garras18.png" type="Texture" id=31]
+[ext_resource path="res://assets/effects/tigre/garras24.png" type="Texture" id=32]
+[ext_resource path="res://assets/effects/tigre/garras15.png" type="Texture" id=33]
+[ext_resource path="res://assets/effects/tigre/garras25.png" type="Texture" id=34]
+[ext_resource path="res://assets/effects/tigre/garras27.png" type="Texture" id=35]
+[ext_resource path="res://assets/effects/tigre/garras12.png" type="Texture" id=36]
+[ext_resource path="res://assets/effects/tigre/garras8.png" type="Texture" id=37]
+[ext_resource path="res://assets/effects/tigre/garras11.png" type="Texture" id=38]
+[ext_resource path="res://assets/effects/tigre/garras21.png" type="Texture" id=39]
+[ext_resource path="res://assets/effects/tigre/garras3.png" type="Texture" id=40]
+[ext_resource path="res://assets/effects/tigre/garras9.png" type="Texture" id=41]
+[ext_resource path="res://assets/effects/tigre/garras28.png" type="Texture" id=42]
+[ext_resource path="res://assets/effects/tigre/garras29.png" type="Texture" id=43]
+[ext_resource path="res://assets/effects/tigre/garras17.png" type="Texture" id=44]
+[ext_resource path="res://assets/effects/tigre/garras4.png" type="Texture" id=45]
+[ext_resource path="res://assets/effects/tigre/garras5.png" type="Texture" id=46]
+[ext_resource path="res://assets/effects/tigre/garras2.png" type="Texture" id=47]
+[ext_resource path="res://assets/effects/tartaruga/cura1.png" type="Texture" id=48]
+[ext_resource path="res://assets/effects/tartaruga/cura2.png" type="Texture" id=49]
+[ext_resource path="res://assets/effects/tartaruga/cura4.png" type="Texture" id=50]
+[ext_resource path="res://assets/effects/tartaruga/cura5.png" type="Texture" id=51]
+[ext_resource path="res://assets/effects/tartaruga/cura6.png" type="Texture" id=52]
+[ext_resource path="res://assets/effects/tartaruga/cura7.png" type="Texture" id=53]
+[ext_resource path="res://assets/effects/tartaruga/cura3.png" type="Texture" id=54]
+[ext_resource path="res://assets/effects/tartaruga/cura8.png" type="Texture" id=55]
+[ext_resource path="res://assets/effects/tartaruga/cura9.png" type="Texture" id=56]
+[ext_resource path="res://assets/effects/tartaruga/cura10.png" type="Texture" id=57]
+[ext_resource path="res://assets/effects/tartaruga/cura12.png" type="Texture" id=58]
+[ext_resource path="res://assets/effects/tartaruga/cura11.png" type="Texture" id=59]
+[ext_resource path="res://assets/effects/tartaruga/cura13.png" type="Texture" id=60]
+[ext_resource path="res://assets/effects/tartaruga/cura14.png" type="Texture" id=61]
 
 [sub_resource type="Animation" id=1]
 resource_name = "attack"
@@ -94,11 +144,31 @@ size = 32
 outline_color = Color( 0.0352941, 0.0352941, 0.0352941, 1 )
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=7]
-size = 53
-outline_size = 2
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 9 )
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ ExtResource( 21 ), ExtResource( 47 ), ExtResource( 40 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 27 ), ExtResource( 8 ), ExtResource( 41 ), ExtResource( 37 ), ExtResource( 29 ), ExtResource( 38 ), ExtResource( 28 ), ExtResource( 36 ), ExtResource( 30 ), ExtResource( 33 ), ExtResource( 44 ), ExtResource( 9 ), ExtResource( 31 ), ExtResource( 23 ), ExtResource( 39 ), ExtResource( 26 ), ExtResource( 24 ), ExtResource( 22 ), ExtResource( 34 ), ExtResource( 32 ), ExtResource( 25 ), ExtResource( 35 ), ExtResource( 42 ), ExtResource( 43 ) ],
+"loop": false,
+"name": "efeito_tigre",
+"speed": 30.0
+}, {
+"frames": [  ],
+"loop": false,
+"name": "efeito_nenhum",
+"speed": 1.0
+} ]
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [  ],
+"loop": false,
+"name": "efeito_nenhum",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 48 ), ExtResource( 49 ), ExtResource( 54 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 59 ), ExtResource( 58 ), ExtResource( 60 ), ExtResource( 61 ) ],
+"loop": false,
+"name": "efeito_tartaruga",
+"speed": 12.0
+} ]
 
 [node name="Battle_Scene" type="Node2D"]
 script = ExtResource( 10 )
@@ -137,11 +207,34 @@ anims/hit = SubResource( 5 )
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
-[node name="ImageHp_Player" type="TextureRect" parent="HUD"]
-margin_left = 32.0
+[node name="StatusBar_Player" type="TextureRect" parent="HUD"]
+margin_left = 16.0
 margin_top = 160.0
-margin_right = 120.0
-margin_bottom = 235.0
+margin_right = 440.0
+margin_bottom = 293.0
+texture = ExtResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StatusBar_Enemy" type="TextureRect" parent="HUD"]
+margin_left = 1264.0
+margin_top = 72.0
+margin_right = 1688.0
+margin_bottom = 205.0
+rect_scale = Vector2( -1, 1 )
+texture = ExtResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="ImageHp_Player" type="TextureRect" parent="HUD"]
+margin_left = 88.0
+margin_top = 208.0
+margin_right = 176.0
+margin_bottom = 283.0
+rect_scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 2 )
 expand = true
 __meta__ = {
@@ -149,10 +242,11 @@ __meta__ = {
 }
 
 [node name="HP_Player" type="Label" parent="HUD"]
-margin_left = 128.0
-margin_top = 192.0
-margin_right = 258.0
-margin_bottom = 291.0
+margin_left = 168.0
+margin_top = 224.0
+margin_right = 191.0
+margin_bottom = 256.0
+rect_scale = Vector2( 0.8, 0.8 )
 custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 1, 0.141176, 0.141176, 1 )
 text = "1"
@@ -161,10 +255,11 @@ __meta__ = {
 }
 
 [node name="ImageMP_Player" type="TextureRect" parent="HUD"]
-margin_left = 32.0
-margin_top = 256.0
-margin_right = 120.0
-margin_bottom = 331.0
+margin_left = 232.0
+margin_top = 200.0
+margin_right = 320.0
+margin_bottom = 275.0
+rect_scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 4 )
 expand = true
 __meta__ = {
@@ -172,10 +267,11 @@ __meta__ = {
 }
 
 [node name="MP_Player" type="Label" parent="HUD"]
-margin_left = 128.0
-margin_top = 288.0
-margin_right = 258.0
-margin_bottom = 387.0
+margin_left = 304.0
+margin_top = 224.0
+margin_right = 327.0
+margin_bottom = 256.0
+rect_scale = Vector2( 0.8, 0.8 )
 custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0.247059, 0.384314, 1, 1 )
 text = "1"
@@ -184,10 +280,11 @@ __meta__ = {
 }
 
 [node name="ImageHp_Enemy" type="TextureRect" parent="HUD"]
-margin_left = 768.0
-margin_top = 64.0
-margin_right = 856.0
-margin_bottom = 139.0
+margin_left = 1120.0
+margin_top = 120.0
+margin_right = 1208.0
+margin_bottom = 195.0
+rect_scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 2 )
 expand = true
 __meta__ = {
@@ -195,10 +292,11 @@ __meta__ = {
 }
 
 [node name="HP_Enemy" type="Label" parent="HUD"]
-margin_left = 864.0
-margin_top = 96.0
-margin_right = 994.0
-margin_bottom = 195.0
+margin_left = 1040.0
+margin_top = 136.0
+margin_right = 1063.0
+margin_bottom = 176.0
+rect_scale = Vector2( 0.8, 0.8 )
 custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 1, 0.141176, 0.141176, 1 )
 text = "1"
@@ -212,221 +310,93 @@ __meta__ = {
 }
 
 [node name="TextureBackground" type="TextureRect" parent="MENU"]
-margin_left = 416.0
-margin_top = 608.0
-margin_right = 1016.0
-margin_bottom = 908.0
+margin_left = 392.0
+margin_top = 416.0
+margin_right = 992.0
+margin_bottom = 1016.0
 rect_scale = Vector2( 0.8, 0.8 )
-texture = ExtResource( 6 )
+texture = ExtResource( 15 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ButtonAttack1" type="TextureButton" parent="MENU"]
-margin_left = 448.0
-margin_top = 640.0
-margin_right = 836.0
-margin_bottom = 813.0
-rect_scale = Vector2( 0.5, 0.3 )
-texture_normal = ExtResource( 7 )
-texture_pressed = ExtResource( 5 )
-texture_hover = ExtResource( 8 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Nome" type="RichTextLabel" parent="MENU/ButtonAttack1"]
-margin_left = 104.388
-margin_top = 30.8711
-margin_right = 312.388
-margin_bottom = 169.871
-mouse_filter = 2
-custom_fonts/normal_font = SubResource( 7 )
-custom_colors/default_color = Color( 1, 0.792157, 0, 1 )
-text = "Postura do tigre"
+margin_left = 432.0
+margin_top = 624.0
+margin_right = 732.0
+margin_bottom = 924.0
+rect_scale = Vector2( 0.4, 0.4 )
+texture_normal = ExtResource( 19 )
+texture_hover = ExtResource( 16 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ButtonAttack2" type="TextureButton" parent="MENU"]
-margin_left = 672.0
-margin_top = 640.0
-margin_right = 1060.0
-margin_bottom = 813.0
-rect_scale = Vector2( 0.5, 0.3 )
-texture_normal = ExtResource( 7 )
-texture_pressed = ExtResource( 5 )
-texture_hover = ExtResource( 8 )
-__meta__ = {
-"_edit_use_anchors_": false,
-"_editor_description_": ""
-}
-
-[node name="Nome" type="RichTextLabel" parent="MENU/ButtonAttack2"]
-margin_left = 80.7754
-margin_top = 28.7415
-margin_right = 329.775
-margin_bottom = 209.741
-mouse_filter = 2
-custom_fonts/normal_font = SubResource( 7 )
-custom_colors/default_color = Color( 1, 0.792157, 0, 1 )
-text = "Postura da tartaruga"
+margin_left = 712.0
+margin_top = 624.0
+margin_right = 1012.0
+margin_bottom = 924.0
+rect_scale = Vector2( 0.4, 0.4 )
+texture_normal = ExtResource( 6 )
+texture_hover = ExtResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": ""
 }
 
 [node name="ButtonAttack3" type="TextureButton" parent="MENU"]
-visible = false
-margin_left = 448.0
-margin_top = 704.0
-margin_right = 836.0
-margin_bottom = 877.0
-rect_scale = Vector2( 0.5, 0.3 )
-texture_normal = ExtResource( 7 )
-texture_pressed = ExtResource( 5 )
-texture_hover = ExtResource( 8 )
-__meta__ = {
-"_edit_use_anchors_": false,
-"_editor_description_": ""
-}
-
-[node name="Nome" type="RichTextLabel" parent="MENU/ButtonAttack3"]
-margin_left = 107.083
-margin_top = 32.5508
-margin_right = 292.083
-margin_bottom = 162.551
-mouse_filter = 2
-custom_fonts/normal_font = SubResource( 7 )
-custom_colors/default_color = Color( 1, 0.792157, 0, 1 )
-text = "Postura do urso"
+margin_left = 512.0
+margin_top = 720.0
+margin_right = 812.0
+margin_bottom = 1020.0
+rect_scale = Vector2( 0.4, 0.4 )
+texture_normal = ExtResource( 17 )
+texture_hover = ExtResource( 18 )
 __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": ""
 }
 
 [node name="ButtonAttack4" type="TextureButton" parent="MENU"]
-visible = false
-margin_left = 672.0
-margin_top = 704.0
-margin_right = 1060.0
-margin_bottom = 877.0
-rect_scale = Vector2( 0.5, 0.3 )
-texture_normal = ExtResource( 7 )
-texture_pressed = ExtResource( 5 )
-texture_hover = ExtResource( 8 )
-__meta__ = {
-"_edit_use_anchors_": false,
-"_editor_description_": ""
-}
-
-[node name="Nome" type="RichTextLabel" parent="MENU/ButtonAttack4"]
-margin_left = 102.122
-margin_top = 25.6799
-margin_right = 330.122
-margin_bottom = 154.68
-mouse_filter = 2
-custom_fonts/normal_font = SubResource( 7 )
-custom_colors/default_color = Color( 1, 0.792157, 0, 1 )
-text = "Postura da fenix"
-__meta__ = {
-"_edit_use_anchors_": false,
-"_editor_description_": ""
-}
-
-[node name="ButtonAttack5" type="TextureButton" parent="MENU"]
-visible = false
-margin_left = 448.0
-margin_top = 768.0
-margin_right = 836.0
-margin_bottom = 941.0
-rect_scale = Vector2( 0.5, 0.3 )
-texture_normal = ExtResource( 7 )
-texture_pressed = ExtResource( 5 )
-texture_hover = ExtResource( 8 )
-__meta__ = {
-"_edit_use_anchors_": false,
-"_editor_description_": ""
-}
-
-[node name="Nome" type="RichTextLabel" parent="MENU/ButtonAttack5"]
-margin_left = 150.444
-margin_top = 59.9888
-margin_right = 335.444
-margin_bottom = 149.989
-mouse_filter = 2
-custom_fonts/normal_font = SubResource( 7 )
-custom_colors/default_color = Color( 1, 0.792157, 0, 1 )
-text = "???"
-__meta__ = {
-"_edit_use_anchors_": false,
-"_editor_description_": ""
-}
-
-[node name="ButtonAttack6" type="TextureButton" parent="MENU"]
-visible = false
-margin_left = 672.0
-margin_top = 768.0
-margin_right = 1060.0
-margin_bottom = 941.0
-rect_scale = Vector2( 0.5, 0.3 )
-texture_normal = ExtResource( 7 )
-texture_pressed = ExtResource( 5 )
-texture_hover = ExtResource( 8 )
-__meta__ = {
-"_edit_use_anchors_": false,
-"_editor_description_": ""
-}
-
-[node name="Nome" type="RichTextLabel" parent="MENU/ButtonAttack6"]
-margin_left = 154.939
-margin_top = 52.4973
-margin_right = 339.939
-margin_bottom = 142.497
-mouse_filter = 2
-custom_fonts/normal_font = SubResource( 7 )
-custom_colors/default_color = Color( 1, 0.792157, 0, 1 )
-bbcode_enabled = true
-bbcode_text = "ITEMS"
-text = "ITEMS"
+margin_left = 632.0
+margin_top = 720.0
+margin_right = 932.0
+margin_bottom = 1020.0
+rect_scale = Vector2( 0.4, 0.4 )
+texture_normal = ExtResource( 13 )
+texture_hover = ExtResource( 14 )
 __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": ""
 }
 
 [node name="ButtonLeave" type="TextureButton" parent="MENU"]
-margin_left = 96.0
-margin_top = 896.0
-margin_right = 484.0
-margin_bottom = 1069.0
-rect_scale = Vector2( 0.5, 0.3 )
-texture_normal = ExtResource( 7 )
-texture_pressed = ExtResource( 5 )
-texture_hover = ExtResource( 8 )
+margin_left = 296.0
+margin_top = 848.0
+margin_right = 656.0
+margin_bottom = 1298.0
+rect_scale = Vector2( 0.1, 0.1 )
+texture_normal = ExtResource( 5 )
+texture_hover = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": ""
 }
 
-[node name="Nome" type="RichTextLabel" parent="MENU/ButtonLeave"]
-margin_left = 154.738
-margin_top = 66.7271
-margin_right = 271.738
-margin_bottom = 156.727
-mouse_filter = 2
-custom_fonts/normal_font = SubResource( 7 )
-custom_colors/default_color = Color( 1, 0.792157, 0, 1 )
-text = "RUN"
-__meta__ = {
-"_edit_use_anchors_": false,
-"_editor_description_": ""
-}
+[node name="AnimatedEffects" type="AnimatedSprite" parent="."]
+position = Vector2( 1032, 456 )
+frames = SubResource( 7 )
+animation = "efeito_tartaruga"
 
+[node name="AnimatedEffects2" type="AnimatedSprite" parent="."]
+position = Vector2( 200, 504 )
+scale = Vector2( 0.8, 0.8 )
+frames = SubResource( 8 )
+animation = "efeito_nenhum"
 [connection signal="fight" from="." to="." method="_on_Battle_Scene_fight"]
 [connection signal="pressed" from="MENU/ButtonAttack1" to="." method="_on_ButtonAttack1_pressed"]
 [connection signal="pressed" from="MENU/ButtonAttack2" to="." method="_on_ButtonAttack2_pressed"]
 [connection signal="pressed" from="MENU/ButtonAttack3" to="." method="_on_ButtonAttack3_pressed"]
 [connection signal="pressed" from="MENU/ButtonAttack4" to="." method="_on_ButtonAttack4_pressed"]
-[connection signal="pressed" from="MENU/ButtonAttack5" to="." method="_on_ButtonAttack5_pressed"]
-[connection signal="pressed" from="MENU/ButtonAttack6" to="." method="_on_ButtonAttack6_pressed"]
 [connection signal="pressed" from="MENU/ButtonLeave" to="." method="_on_ButtonLeave_pressed"]
