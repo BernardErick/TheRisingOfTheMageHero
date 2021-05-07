@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-export var HP:int = 80 #Health points
+export var HP:int = 200 #Health points
 export var AP:int = 0 #Ability power
 export var AD:int = 5 #Ability Damage
 export var MR:int = 10 #Magic Resistence
@@ -36,7 +36,7 @@ func _runToPlayer():
 	if player_entered and !touchPlayer and !Global.IS_FIGHTING:
 		
 		position += (Player.position - position)/slow
-		$AnimatedSprite.play("Run")
+		
 		
 func animationController():
 	var posAtual = position.x
@@ -50,11 +50,14 @@ func animationController():
 
 
 
+
+
+
 func _on_Area2D_body_entered(body):
 	if body == Player:
 		player_entered = true
 
 
 func _on_Area2D_body_exited(body):
-	if body == Player: 
+	if body == Player:
 		player_entered = false

@@ -40,7 +40,7 @@ shape = SubResource( 1 )
 position = Vector2( 641.298, 477.107 )
 frames = SubResource( 2 )
 animation = "Idle"
-frame = 5
+frame = 2
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]

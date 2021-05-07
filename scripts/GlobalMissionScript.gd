@@ -1,5 +1,5 @@
 extends Node
-var goblinsKilled = 0 
-var slimesKilled = 0
-var skeletonsKilled = 0
+var goblinsKilled = 5
+var slimesKilled = 5
+var skeletonsKilled = 5
 

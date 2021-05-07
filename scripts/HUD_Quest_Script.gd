@@ -4,12 +4,13 @@ var mission = "Fale com o taverneiro"
 var mission1 = "Mate os slimes"
 var mission2 = "Mate os goblins"
 var mission3 = "Elimine os esqueletos"
-signal boss
+var boss = false 
 var tocou = false
 export var missionCount = 0
 export var mission1Limit = 5
 export var mission2Limit = 5
 export var mission3Limit = 5
+
 
 var showQuest = -1
 
@@ -19,6 +20,8 @@ func _ready():
 	
 	
 func _process(delta):
+	
+	
 	if tocou:
 		$titleQuest.text = "Ataque dos Slimes"
 		$textQuest.text = mission1 + " " + str(GlobalMissionScript.slimesKilled) + "/" + str(mission1Limit)
@@ -44,8 +47,8 @@ func _process(delta):
 	if GlobalMissionScript.goblinsKilled == mission2Limit:
 		$titleQuest.text = "Caveirinhas"
 		$textQuest.text = mission3 + str(GlobalMissionScript.skeletonsKilled) + "/" + str(mission3Limit)
-	if GlobalMissionScript.skeletonsKilled == mission3Limit:
-		emit_signal("boss")
+	if GlobalMissionScript.skeletonsKilled == mission3Limit and GlobalMissionScript.slimesKilled == mission1Limit and GlobalMissionScript.goblinsKilled == mission2Limit:
+		boss = true
 		
 
 

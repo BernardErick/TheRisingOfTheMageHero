@@ -22,8 +22,8 @@ func _ready():
 			Global.IS_FIGHTING = true
 		if Enemy.name.substr(0,4) == "Boss":
 			get_node("Enemy").texture = Enemy.get_node("Sprite").texture
-			get_node("Enemy").scale = Vector2(6,6)
-			get_node("Enemy").flip_h = true
+			get_node("Enemy").scale= Vector2(6,6)
+			
 		$Camera_Battle.current = true
 		get_node("HUD/HP_Player").text = str(Global.HP)
 		get_node("HUD/MP_Player").text = str(Global.MP)
@@ -34,7 +34,6 @@ func _ready():
 		Player.get_node("HUD").get_child(3).hide()
 		Player.get_node("HUD").get_child(4).hide()
 		Player.get_node("HUD").get_child(5).hide()
-		Player.get_node("HUD").get_child(6).hide()
 	else:
 		print("Aberto para modo teste")
 func _physics_process(delta):
@@ -75,7 +74,6 @@ func _on_ButtonLeave_pressed():
 	Player.get_node("HUD").get_child(3).show()
 	Player.get_node("HUD").get_child(4).show()
 	Player.get_node("HUD").get_child(5).show()
-	Player.get_node("HUD").get_child(6).show()
 	Global.IS_FIGHTING = false
 	Player.get_node("Camera_Player").current = true
 	queue_free()
@@ -106,13 +104,19 @@ func _on_Battle_Scene_fight(damage,mana,type):
 			GlobalMissionScript.goblinsKilled += 1
 		if Enemy.name.substr(0,5) == "Slime":
 			GlobalMissionScript.slimesKilled += 1
+
+			
 		if Enemy.name.substr(0,8) == "Skeleton":
 			GlobalMissionScript.skeletonsKilled += 1
 		
-		Global.XP += Enemy.XP
-		Global.IS_FIGHTING = false
-		yield(get_tree().create_timer(2.0),"timeout")
-		_on_ButtonLeave_pressed()
+
+		if Enemy.name.substr(0,8) == "Skeleton":
+		
+			GlobalMissionScript.skeletonsKilled += 1
+	Global.XP += Enemy.XP
+	Global.IS_FIGHTING = false
+	yield(get_tree().create_timer(2.0),"timeout")
+	_on_ButtonLeave_pressed()
 	#momento de contra ataque do inimigo/ o jogador recebe dano
 	yield(get_tree().create_timer(3.0),"timeout")
 	$AnimatedEffects.play("efeito_nenhum")

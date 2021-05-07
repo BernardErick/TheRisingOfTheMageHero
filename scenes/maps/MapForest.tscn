@@ -1,4 +1,4 @@
-[gd_scene load_steps=112 format=2]
+[gd_scene load_steps=113 format=2]
 
 [ext_resource path="res://nodes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://nodes/Slime.tscn" type="PackedScene" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://assets/maps/forest/ambient.png" type="Texture" id=12]
 [ext_resource path="res://nodes/HUD_Quest.tscn" type="PackedScene" id=13]
 [ext_resource path="res://nodes/Barkeeper.tscn" type="PackedScene" id=14]
+[ext_resource path="res://nodes/Boss.tscn" type="PackedScene" id=15]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 2864.12, 123.362 )
@@ -4620,6 +4621,9 @@ scale = Vector2( 0.3, 0.3 )
 [node name="Slime10" parent="Slimes" instance=ExtResource( 2 )]
 position = Vector2( 2019.21, -669.415 )
 scale = Vector2( 0.3, 0.3 )
+
+[node name="Boss" parent="." instance=ExtResource( 15 )]
+position = Vector2( 749.719, 594.546 )
 
 [node name="Trees" type="TileMap" parent="."]
 tile_set = SubResource( 54 )

@@ -1,15 +1,14 @@
-[gd_scene load_steps=70 format=2]
+[gd_scene load_steps=41 format=2]
 
-[ext_resource path="res://assets/backgrounds/forest.png" type="Texture" id=1]
+[ext_resource path="res://assets/backgrounds/battle.jpg" type="Texture" id=1]
 [ext_resource path="res://assets/HUD/heart.png" type="Texture" id=2]
 [ext_resource path="res://assets/Font/AGoblinAppears-o2aV.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://assets/HUD/mana.png" type="Texture" id=4]
 [ext_resource path="res://assets/GUI/exit_button.png" type="Texture" id=5]
 [ext_resource path="res://assets/GUI/button_tartaruga.png" type="Texture" id=6]
 [ext_resource path="res://assets/GUI/exit_button2.png" type="Texture" id=7]
-[ext_resource path="res://assets/effects/tigre/garras7.png" type="Texture" id=8]
-[ext_resource path="res://assets/effects/tigre/garras16.png" type="Texture" id=9]
-[ext_resource path="res://scripts/Battle_Scene_Script.gd" type="Script" id=10]
+[ext_resource path="res://assets/enemies/boss/Idle/Idle1.tres" type="Texture" id=8]
+[ext_resource path="res://scenes/battle/Final_Battle_SceneScript.gd" type="Script" id=9]
 [ext_resource path="res://assets/player/Animations/Idle/Idle1.tres" type="Texture" id=11]
 [ext_resource path="res://assets/GUI/button_tartaruga2.png" type="Texture" id=12]
 [ext_resource path="res://assets/GUI/button_fenix.png" type="Texture" id=13]
@@ -20,33 +19,6 @@
 [ext_resource path="res://assets/GUI/button_urso2.png" type="Texture" id=18]
 [ext_resource path="res://assets/GUI/button_tigre.png" type="Texture" id=19]
 [ext_resource path="res://assets/GUI/StatusBar.png" type="Texture" id=20]
-[ext_resource path="res://assets/effects/tigre/garras1.png" type="Texture" id=21]
-[ext_resource path="res://assets/effects/tigre/garras23.png" type="Texture" id=22]
-[ext_resource path="res://assets/effects/tigre/garras19.png" type="Texture" id=23]
-[ext_resource path="res://assets/effects/tigre/garras22.png" type="Texture" id=24]
-[ext_resource path="res://assets/effects/tigre/garras26.png" type="Texture" id=25]
-[ext_resource path="res://assets/effects/tigre/garras20.png" type="Texture" id=26]
-[ext_resource path="res://assets/effects/tigre/garras6.png" type="Texture" id=27]
-[ext_resource path="res://assets/effects/tigre/garras13.png" type="Texture" id=28]
-[ext_resource path="res://assets/effects/tigre/garras10.png" type="Texture" id=29]
-[ext_resource path="res://assets/effects/tigre/garras14.png" type="Texture" id=30]
-[ext_resource path="res://assets/effects/tigre/garras18.png" type="Texture" id=31]
-[ext_resource path="res://assets/effects/tigre/garras24.png" type="Texture" id=32]
-[ext_resource path="res://assets/effects/tigre/garras15.png" type="Texture" id=33]
-[ext_resource path="res://assets/effects/tigre/garras25.png" type="Texture" id=34]
-[ext_resource path="res://assets/effects/tigre/garras27.png" type="Texture" id=35]
-[ext_resource path="res://assets/effects/tigre/garras12.png" type="Texture" id=36]
-[ext_resource path="res://assets/effects/tigre/garras8.png" type="Texture" id=37]
-[ext_resource path="res://assets/effects/tigre/garras11.png" type="Texture" id=38]
-[ext_resource path="res://assets/effects/tigre/garras21.png" type="Texture" id=39]
-[ext_resource path="res://assets/effects/tigre/garras3.png" type="Texture" id=40]
-[ext_resource path="res://assets/effects/tigre/garras9.png" type="Texture" id=41]
-[ext_resource path="res://assets/effects/tigre/garras28.png" type="Texture" id=42]
-[ext_resource path="res://assets/effects/tigre/garras29.png" type="Texture" id=43]
-[ext_resource path="res://assets/effects/tigre/garras17.png" type="Texture" id=44]
-[ext_resource path="res://assets/effects/tigre/garras4.png" type="Texture" id=45]
-[ext_resource path="res://assets/effects/tigre/garras5.png" type="Texture" id=46]
-[ext_resource path="res://assets/effects/tigre/garras2.png" type="Texture" id=47]
 [ext_resource path="res://assets/effects/tartaruga/cura1.png" type="Texture" id=48]
 [ext_resource path="res://assets/effects/tartaruga/cura2.png" type="Texture" id=49]
 [ext_resource path="res://assets/effects/tartaruga/cura4.png" type="Texture" id=50]
@@ -151,27 +123,14 @@ animations = [ {
 "name": "efeito_nenhum",
 "speed": 1.0
 }, {
-"frames": [ ExtResource( 21 ), ExtResource( 47 ), ExtResource( 40 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 27 ), ExtResource( 8 ), ExtResource( 41 ), ExtResource( 37 ), ExtResource( 29 ), ExtResource( 38 ), ExtResource( 28 ), ExtResource( 36 ), ExtResource( 30 ), ExtResource( 33 ), ExtResource( 44 ), ExtResource( 9 ), ExtResource( 31 ), ExtResource( 23 ), ExtResource( 39 ), ExtResource( 26 ), ExtResource( 24 ), ExtResource( 22 ), ExtResource( 34 ), ExtResource( 32 ), ExtResource( 25 ), ExtResource( 35 ), ExtResource( 42 ), ExtResource( 43 ) ],
-"loop": false,
-"name": "efeito_tigre",
-"speed": 30.0
-} ]
-
-[sub_resource type="SpriteFrames" id=8]
-animations = [ {
-"frames": [  ],
-"loop": false,
-"name": "efeito_nenhum",
-"speed": 1.0
-}, {
 "frames": [ ExtResource( 48 ), ExtResource( 49 ), ExtResource( 54 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 59 ), ExtResource( 58 ), ExtResource( 60 ), ExtResource( 61 ) ],
 "loop": false,
 "name": "efeito_tartaruga",
 "speed": 12.0
 } ]
 
-[node name="Battle_Scene" type="Node2D"]
-script = ExtResource( 10 )
+[node name="Final_Battle_Scene" type="Node2D"]
+script = ExtResource( 9 )
 
 [node name="Camera_Battle" type="Camera2D" parent="."]
 position = Vector2( -1.8877, 3.77551 )
@@ -179,10 +138,12 @@ anchor_mode = 0
 current = true
 
 [node name="Background" type="TextureRect" parent="."]
-margin_right = 800.0
-margin_bottom = 480.0
+margin_top = 8.0
+margin_right = 799.0
+margin_bottom = 489.0
 rect_scale = Vector2( 1.6, 2 )
 texture = ExtResource( 1 )
+expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -198,6 +159,8 @@ anims/hit = SubResource( 2 )
 
 [node name="Enemy" type="Sprite" parent="."]
 position = Vector2( 1028.32, 450.854 )
+scale = Vector2( 6, 6 )
+texture = ExtResource( 8 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Enemy"]
 anims/attack = SubResource( 3 )
@@ -386,12 +349,11 @@ __meta__ = {
 
 [node name="AnimatedEffects" type="AnimatedSprite" parent="."]
 position = Vector2( 1032, 456 )
-frames = SubResource( 7 )
 
 [node name="AnimatedEffects2" type="AnimatedSprite" parent="."]
 position = Vector2( 200, 504 )
 scale = Vector2( 0.8, 0.8 )
-frames = SubResource( 8 )
+frames = SubResource( 7 )
 animation = "efeito_nenhum"
 
 [connection signal="fight" from="." to="." method="_on_Battle_Scene_fight"]
