@@ -2,7 +2,7 @@ extends Node2D
 onready var Enemy
 onready var Player
 
-signal fight(damage,mana)
+signal fight(damage,mana,type)
 
 func _ready():
 	if Enemy and Player != null and !Global.IS_FIGHTING:
@@ -26,24 +26,26 @@ func _ready():
 		Player.get_node("HUD").get_child(2).hide()
 		Player.get_node("HUD").get_child(3).hide()
 		Player.get_node("HUD").get_child(4).hide()
-		Player.get_node("HUD").get_child(5).hide()		
+		Player.get_node("HUD").get_child(5).hide()
 	else:
 		print("Aberto para modo teste")
-func _process(delta):
-	
+func _physics_process(delta):
+	$HUD/MP_Player.text = str(Global.HP)
+	$HUD/MP_Player.text = str(Global.MP)
+	$HUD/HP_Enemy.text = str(Enemy.HP)
 	pass
 
 func _on_ButtonAttack1_pressed():
 	var damage = Global.AD + 10 - Enemy.AR * 0.1
 	var mana = 0
 	if Global.MP >= mana:
-		emit_signal("fight",damage,mana)
+		emit_signal("fight",damage,mana,1)
 	pass # Replace with function body.
 func _on_ButtonAttack2_pressed():
-	var damage = Global.AD + 20 - Enemy.AR * 0.1
+	var damage = Global.AD + 12 - Enemy.AR * 0.1
 	var mana = 90
 	if Global.MP >= mana:
-		emit_signal("fight",damage,mana)
+		emit_signal("fight",damage,mana,2)
 	pass # Replace with function body.
 func _on_ButtonAttack3_pressed():
 	var damage = Global.AD + 30 - Enemy.AR * 0.1
@@ -54,18 +56,6 @@ func _on_ButtonAttack3_pressed():
 func _on_ButtonAttack4_pressed():
 	var damage = Global.AD + 40 - Enemy.AR * 0.1
 	var mana = 150
-	if Global.MP >= mana:
-		emit_signal("fight",damage,mana)
-	pass # Replace with function body.
-func _on_ButtonAttack5_pressed():
-	var damage = Global.AD + 50 - Enemy.AR * 0.1
-	var mana = 150
-	if Global.MP >= mana:
-		emit_signal("fight",damage,mana)
-	pass # Replace with function body.
-func _on_ButtonAttack6_pressed():
-	var damage = Global.AD + 100 - Enemy.AR * 0.1
-	var mana = 200
 	if Global.MP >= mana:
 		emit_signal("fight",damage,mana)
 	pass # Replace with function body.
@@ -83,38 +73,45 @@ func _on_ButtonLeave_pressed():
 	pass # Replace with function body.
 	
 	
-func _on_Battle_Scene_fight(damage,mana):
+func _on_Battle_Scene_fight(damage,mana,type):
 	$MENU.visible = false
 	#momento de ataque do jogador/ o inimigo recebe dano
-	yield(get_tree().create_timer(2.0),"timeout")
+	#yield(get_tree().create_timer(1.0),"timeout")
+	if type == 1:
+		$AnimatedEffects.play("efeito_tigre")
+	if type == 2:
+		if Global.HP + 10 >= Global.MAX_HP:
+			Global.HP = Global.MAX_HP
+		else:
+			Global.HP += 10
+		$AnimatedEffects2.play("efeito_tartaruga")
 	$Player.get_node("AnimationPlayer").play("attack")
 	$Enemy.get_node("AnimationPlayer").play("hit")
 	Enemy.HP -= damage
 	Global.MP -= mana
+	$HUD/HP_Player.text = str(Global.HP)
 	$HUD/MP_Player.text = str(Global.MP)
 	$HUD/HP_Enemy.text = str(Enemy.HP)
-	#momento de contra ataque do inimigo/ o jogador recebe dano
-	yield(get_tree().create_timer(3.0),"timeout")
-	$Enemy.get_node("AnimationPlayer").play("attack")
-	$Player.get_node("AnimationPlayer").play("hit")
-	Global.HP -= Enemy.AD - Global.AR * 0.1
-	$HUD/HP_Player.text = str(Global.HP)
 	if Enemy.HP <= 0:
 		if Enemy.name.substr(0,6) == "Goblin":
 			GlobalMissionScript.goblinsKilled += 1
 		if Enemy.name.substr(0,5) == "Slime":
 			GlobalMissionScript.slimesKilled += 1
-			if Enemy.name.substr(0,8) == "Skeleton":
-				GlobalMissionScript.skeletonsKilled += 1
-		
+		if Enemy.name.substr(0,8) == "Skeleton":
+			GlobalMissionScript.skeletonsKilled += 1		
 		Global.XP += Enemy.XP
 		Global.IS_FIGHTING = false
-		
-
-
-		
-
+		yield(get_tree().create_timer(2.0),"timeout")
 		_on_ButtonLeave_pressed()
+	#momento de contra ataque do inimigo/ o jogador recebe dano
+	yield(get_tree().create_timer(3.0),"timeout")
+	$AnimatedEffects.play("efeito_nenhum")
+	$AnimatedEffects2.play("efeito_nenhum")
+	$Enemy.get_node("AnimationPlayer").play("attack")
+	$Player.get_node("AnimationPlayer").play("hit")
+	Global.HP -= Enemy.AD - Global.AR * 0.1
+	$HUD/HP_Player.text = str(Global.HP)
+
 	yield(get_tree().create_timer(1.0),"timeout")	
 	$MENU.visible = true
 	pass # Replace with function body.
