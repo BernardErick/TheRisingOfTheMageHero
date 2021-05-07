@@ -104,8 +104,9 @@ func _on_Battle_Scene_fight(damage,mana):
 			GlobalMissionScript.goblinsKilled += 1
 		if Enemy.name.substr(0,5) == "Slime":
 			GlobalMissionScript.slimesKilled += 1
-			if Enemy.name.substr(0,8) == "Skeleton":
-				GlobalMissionScript.skeletonsKilled += 1
+			
+		if Enemy.name.substr(0,8) == "Skeleton":
+			GlobalMissionScript.skeletonsKilled += 1
 		
 		Global.XP += Enemy.XP
 		Global.IS_FIGHTING = false

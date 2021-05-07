@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/HUD_Quest_Script.gd" type="Script" id=1]
 [ext_resource path="res://assets/Font/PixelOperatorSC.ttf" type="DynamicFontData" id=2]
@@ -8,15 +8,15 @@
 size = 24
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=2]
-font_data = ExtResource( 2 )
-
 [sub_resource type="DynamicFont" id=3]
 size = 32
 font_data = ExtResource( 2 )
 
-[node name="HUD_Quest" type="CanvasLayer"]
+[node name="HUD_Quest" type="Control"]
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="HUD_Quest_Panel" type="Panel" parent="."]
 margin_left = 7.0
@@ -40,23 +40,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="textCount" type="Label" parent="."]
-margin_left = 240.495
-margin_top = 212.655
-margin_right = 280.495
-margin_bottom = 243.655
-custom_fonts/font = SubResource( 2 )
-text = "teste
-"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="titleQuest" type="Label" parent="."]
-margin_left = 81.5265
-margin_top = 209.979
-margin_right = 175.236
-margin_bottom = 244.979
+margin_left = 82.0
+margin_top = 210.0
+margin_right = 296.0
+margin_bottom = 277.0
 custom_fonts/font = SubResource( 3 )
 text = "teste
 "

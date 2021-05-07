@@ -40,7 +40,7 @@ shape = SubResource( 1 )
 position = Vector2( 641.298, 477.107 )
 frames = SubResource( 2 )
 animation = "Idle"
-frame = 3
+frame = 5
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -48,4 +48,5 @@ playing = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 623.671, 557.911 )
 shape = SubResource( 3 )
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
