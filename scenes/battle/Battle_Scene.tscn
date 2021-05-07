@@ -74,7 +74,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=5]
 step = 0.333333
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:modulate")
@@ -89,12 +89,12 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 0.85098, 0.282353, 0.282353, 1 ), Color( 0.854902, 0.0941176, 0.0941176, 1 ), Color( 0.913725, 0.34902, 0.34902, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=6]
 size = 32
 outline_color = Color( 0.0352941, 0.0352941, 0.0352941, 1 )
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=7]
 size = 53
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
@@ -133,7 +133,7 @@ position = Vector2( 1028.32, 450.854 )
 anims/attack = SubResource( 3 )
 anims/goblinAttack = SubResource( 4 )
 anims/goblinAttack1 = SubResource( 4 )
-anims/hit = SubResource( 7 )
+anims/hit = SubResource( 5 )
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
@@ -153,7 +153,7 @@ margin_left = 128.0
 margin_top = 192.0
 margin_right = 258.0
 margin_bottom = 291.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 1, 0.141176, 0.141176, 1 )
 text = "1"
 __meta__ = {
@@ -176,7 +176,7 @@ margin_left = 128.0
 margin_top = 288.0
 margin_right = 258.0
 margin_bottom = 387.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0.247059, 0.384314, 1, 1 )
 text = "1"
 __meta__ = {
@@ -199,7 +199,7 @@ margin_left = 864.0
 margin_top = 96.0
 margin_right = 994.0
 margin_bottom = 195.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 1, 0.141176, 0.141176, 1 )
 text = "1"
 __meta__ = {
@@ -241,7 +241,7 @@ margin_top = 30.8711
 margin_right = 312.388
 margin_bottom = 169.871
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 6 )
+custom_fonts/normal_font = SubResource( 7 )
 custom_colors/default_color = Color( 1, 0.792157, 0, 1 )
 text = "Postura do tigre"
 __meta__ = {
@@ -268,7 +268,7 @@ margin_top = 28.7415
 margin_right = 329.775
 margin_bottom = 209.741
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 6 )
+custom_fonts/normal_font = SubResource( 7 )
 custom_colors/default_color = Color( 1, 0.792157, 0, 1 )
 text = "Postura da tartaruga"
 __meta__ = {
@@ -297,7 +297,7 @@ margin_top = 32.5508
 margin_right = 292.083
 margin_bottom = 162.551
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 6 )
+custom_fonts/normal_font = SubResource( 7 )
 custom_colors/default_color = Color( 1, 0.792157, 0, 1 )
 text = "Postura do urso"
 __meta__ = {
@@ -326,7 +326,7 @@ margin_top = 25.6799
 margin_right = 330.122
 margin_bottom = 154.68
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 6 )
+custom_fonts/normal_font = SubResource( 7 )
 custom_colors/default_color = Color( 1, 0.792157, 0, 1 )
 text = "Postura da fenix"
 __meta__ = {
@@ -355,7 +355,7 @@ margin_top = 59.9888
 margin_right = 335.444
 margin_bottom = 149.989
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 6 )
+custom_fonts/normal_font = SubResource( 7 )
 custom_colors/default_color = Color( 1, 0.792157, 0, 1 )
 text = "???"
 __meta__ = {
@@ -384,7 +384,7 @@ margin_top = 52.4973
 margin_right = 339.939
 margin_bottom = 142.497
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 6 )
+custom_fonts/normal_font = SubResource( 7 )
 custom_colors/default_color = Color( 1, 0.792157, 0, 1 )
 bbcode_enabled = true
 bbcode_text = "ITEMS"
@@ -414,7 +414,7 @@ margin_top = 66.7271
 margin_right = 271.738
 margin_bottom = 156.727
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 6 )
+custom_fonts/normal_font = SubResource( 7 )
 custom_colors/default_color = Color( 1, 0.792157, 0, 1 )
 text = "RUN"
 __meta__ = {
