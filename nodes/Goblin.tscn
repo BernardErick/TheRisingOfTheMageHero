@@ -1,0 +1,98 @@
+[gd_scene load_steps=33 format=2]
+
+[ext_resource path="res://assets/enemies/Goblin/idle/Idle2.tres" type="Texture" id=1]
+[ext_resource path="res://assets/enemies/Goblin/idle/Idle1.tres" type="Texture" id=2]
+[ext_resource path="res://assets/enemies/Goblin/idle/Idle3.tres" type="Texture" id=3]
+[ext_resource path="res://assets/enemies/Goblin/idle/Idle4.tres" type="Texture" id=4]
+[ext_resource path="res://assets/enemies/Goblin/Attack/Attack1.tres" type="Texture" id=5]
+[ext_resource path="res://scripts/GoblinScript.gd" type="Script" id=6]
+[ext_resource path="res://assets/enemies/Goblin/Attack/Attack3.tres" type="Texture" id=7]
+[ext_resource path="res://assets/enemies/Goblin/Attack/Attack2.tres" type="Texture" id=8]
+[ext_resource path="res://assets/enemies/Goblin/Attack/Attack7.tres" type="Texture" id=9]
+[ext_resource path="res://assets/enemies/Goblin/Attack/Attack6.tres" type="Texture" id=10]
+[ext_resource path="res://assets/enemies/Goblin/Attack/Attack5.tres" type="Texture" id=11]
+[ext_resource path="res://assets/enemies/Goblin/Attack/Attack4.tres" type="Texture" id=12]
+[ext_resource path="res://assets/enemies/Goblin/Attack/Attack8.tres" type="Texture" id=13]
+[ext_resource path="res://assets/enemies/Goblin/Take_hit/Take_Hit2.tres" type="Texture" id=14]
+[ext_resource path="res://assets/enemies/Goblin/Take_hit/Take_Hit3.tres" type="Texture" id=15]
+[ext_resource path="res://assets/enemies/Goblin/Take_hit/Take_Hit.tres" type="Texture" id=16]
+[ext_resource path="res://assets/enemies/Goblin/Take_hit/Take_Hit4.tres" type="Texture" id=17]
+[ext_resource path="res://assets/enemies/Goblin/Run/Run5.tres" type="Texture" id=18]
+[ext_resource path="res://assets/enemies/Goblin/Run/Run1.tres" type="Texture" id=19]
+[ext_resource path="res://assets/enemies/Goblin/Run/Run3.tres" type="Texture" id=20]
+[ext_resource path="res://assets/enemies/Goblin/Run/Run2.tres" type="Texture" id=21]
+[ext_resource path="res://assets/enemies/Goblin/Run/Run4.tres" type="Texture" id=22]
+[ext_resource path="res://assets/enemies/Goblin/Run/Run6.tres" type="Texture" id=23]
+[ext_resource path="res://assets/enemies/Goblin/Run/Run7.tres" type="Texture" id=24]
+[ext_resource path="res://assets/enemies/Goblin/Run/Run8.tres" type="Texture" id=25]
+[ext_resource path="res://assets/enemies/Goblin/Death/Death3.tres" type="Texture" id=26]
+[ext_resource path="res://assets/enemies/Goblin/Death/Death4.tres" type="Texture" id=27]
+[ext_resource path="res://assets/enemies/Goblin/Death/Death2.tres" type="Texture" id=28]
+[ext_resource path="res://assets/enemies/Goblin/Death/Death1.tres" type="Texture" id=29]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 29 ), ExtResource( 28 ), ExtResource( 26 ), ExtResource( 27 ) ],
+"loop": true,
+"name": "Death",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 16 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "Take_hit",
+"speed": 7.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 1 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 4.69
+}, {
+"frames": [ ExtResource( 19 ), ExtResource( 21 ), ExtResource( 20 ), ExtResource( 22 ), ExtResource( 18 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ) ],
+"loop": true,
+"name": "Run",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "Attack",
+"speed": 7.0
+} ]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 39.023
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 276.814
+
+[node name="Goblin" type="KinematicBody2D"]
+scale = Vector2( 0.8, 0.8 )
+script = ExtResource( 6 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -363.702, 255.657 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 1 )
+animation = "Idle"
+frame = 2
+playing = true
+offset = Vector2( 182.313, -127.51 )
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.84314, 2.3176 )
+shape = SubResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 6.29959, 0 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -5.54321, -0.717285 )
+shape = SubResource( 3 )
+one_way_collision = true
+
+[node name="Sprite" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 2 )
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]

@@ -1,0 +1,51 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://assets/maps/forest/house/house4.png" type="Texture" id=1]
+[ext_resource path="res://assets/maps/forest/house/house1.png" type="Texture" id=2]
+[ext_resource path="res://assets/maps/forest/house/house7.png" type="Texture" id=3]
+[ext_resource path="res://assets/maps/forest/house/house9.png" type="Texture" id=4]
+[ext_resource path="res://assets/maps/forest/house/house5.png" type="Texture" id=5]
+[ext_resource path="res://assets/maps/forest/house/house2.png" type="Texture" id=6]
+[ext_resource path="res://assets/maps/forest/house/house3.png" type="Texture" id=7]
+[ext_resource path="res://assets/maps/forest/house/house11.png" type="Texture" id=8]
+[ext_resource path="res://assets/maps/forest/house/house6.png" type="Texture" id=9]
+[ext_resource path="res://assets/maps/forest/house/house10.png" type="Texture" id=10]
+[ext_resource path="res://assets/maps/forest/house/house12.png" type="Texture" id=11]
+[ext_resource path="res://assets/maps/forest/house/house13.png" type="Texture" id=12]
+[ext_resource path="res://assets/maps/forest/house/house8.png" type="Texture" id=13]
+[ext_resource path="res://scripts/HomeScript.gd" type="Script" id=14]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 316.832, 124.576 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 1 ), ExtResource( 5 ), ExtResource( 9 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 8 ), ExtResource( 12 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 6.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 368.985, 215.964 )
+
+[node name="Home" type="StaticBody2D"]
+script = ExtResource( 14 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 640.857, 513.307 )
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 641.298, 477.107 )
+frames = SubResource( 2 )
+animation = "Idle"
+frame = 3
+playing = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 623.671, 557.911 )
+shape = SubResource( 3 )
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

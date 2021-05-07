@@ -1,0 +1,432 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://assets/backgrounds/forest.png" type="Texture" id=1]
+[ext_resource path="res://assets/HUD/heart.png" type="Texture" id=2]
+[ext_resource path="res://assets/Font/AGoblinAppears-o2aV.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/HUD/potion.png" type="Texture" id=4]
+[ext_resource path="res://assets/GUI/button_menu_pressed.png" type="Texture" id=5]
+[ext_resource path="res://assets/GUI/battle_menu.png" type="Texture" id=6]
+[ext_resource path="res://assets/GUI/button_menu_normal.png" type="Texture" id=7]
+[ext_resource path="res://assets/GUI/button_menu_hover.png" type="Texture" id=8]
+[ext_resource path="res://assets/Font/PixelOperatorSC.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://scripts/Battle_Scene_Script.gd" type="Script" id=10]
+[ext_resource path="res://assets/player/Animations/Idle/Idle1.tres" type="Texture" id=11]
+
+[sub_resource type="Animation" id=1]
+resource_name = "attack"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 138.374, 703.035 ), Vector2( 138.374, 680 ), Vector2( 138.374, 660 ), Vector2( 138.374, 680 ), Vector2( 138.374, 703.035 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "hit"
+step = 0.333333
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.85098, 0.282353, 0.282353, 1 ), Color( 0.854902, 0.0941176, 0.0941176, 1 ), Color( 0.913725, 0.34902, 0.34902, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "attack"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1028.32, 450.854 ), Vector2( 1028.32, 440 ), Vector2( 1028.32, 420 ), Vector2( 1028.32, 440 ), Vector2( 1028.32, 450.854 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "Attack"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Attack:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
+}
+
+[sub_resource type="Animation" id=7]
+step = 0.333333
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.85098, 0.282353, 0.282353, 1 ), Color( 0.854902, 0.0941176, 0.0941176, 1 ), Color( 0.913725, 0.34902, 0.34902, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="DynamicFont" id=5]
+size = 32
+outline_color = Color( 0.0352941, 0.0352941, 0.0352941, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 53
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 9 )
+
+[node name="Battle_Scene" type="Node2D"]
+script = ExtResource( 10 )
+
+[node name="Camera_Battle" type="Camera2D" parent="."]
+position = Vector2( -1.8877, 3.77551 )
+anchor_mode = 0
+current = true
+
+[node name="Background" type="TextureRect" parent="."]
+margin_right = 800.0
+margin_bottom = 480.0
+rect_scale = Vector2( 1.6, 2 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player" type="Sprite" parent="."]
+position = Vector2( 203.646, 598.987 )
+scale = Vector2( 4.11131, 4.14305 )
+texture = ExtResource( 11 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
+anims/attack = SubResource( 1 )
+anims/hit = SubResource( 2 )
+
+[node name="Enemy" type="Sprite" parent="."]
+position = Vector2( 1028.32, 450.854 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemy"]
+anims/attack = SubResource( 3 )
+anims/goblinAttack = SubResource( 4 )
+anims/goblinAttack1 = SubResource( 4 )
+anims/hit = SubResource( 7 )
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="ImageHp_Player" type="TextureRect" parent="HUD"]
+margin_left = 32.0
+margin_top = 160.0
+margin_right = 120.0
+margin_bottom = 235.0
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HP_Player" type="Label" parent="HUD"]
+margin_left = 128.0
+margin_top = 192.0
+margin_right = 258.0
+margin_bottom = 291.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 1, 0.141176, 0.141176, 1 )
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ImageMP_Player" type="TextureRect" parent="HUD"]
+margin_left = 32.0
+margin_top = 256.0
+margin_right = 120.0
+margin_bottom = 331.0
+texture = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MP_Player" type="Label" parent="HUD"]
+margin_left = 128.0
+margin_top = 288.0
+margin_right = 258.0
+margin_bottom = 387.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.247059, 0.384314, 1, 1 )
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ImageHp_Enemy" type="TextureRect" parent="HUD"]
+margin_left = 768.0
+margin_top = 64.0
+margin_right = 856.0
+margin_bottom = 139.0
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HP_Enemy" type="Label" parent="HUD"]
+margin_left = 864.0
+margin_top = 96.0
+margin_right = 994.0
+margin_bottom = 195.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 1, 0.141176, 0.141176, 1 )
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MENU" type="Control" parent="."]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureBackground" type="TextureRect" parent="MENU"]
+margin_left = 416.0
+margin_top = 608.0
+margin_right = 1016.0
+margin_bottom = 908.0
+rect_scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonAttack1" type="TextureButton" parent="MENU"]
+margin_left = 448.0
+margin_top = 640.0
+margin_right = 836.0
+margin_bottom = 813.0
+rect_scale = Vector2( 0.5, 0.3 )
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Nome" type="RichTextLabel" parent="MENU/ButtonAttack1"]
+margin_left = 104.388
+margin_top = 30.8711
+margin_right = 312.388
+margin_bottom = 169.871
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 6 )
+custom_colors/default_color = Color( 1, 0.792157, 0, 1 )
+text = "Postura do tigre"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonAttack2" type="TextureButton" parent="MENU"]
+margin_left = 672.0
+margin_top = 640.0
+margin_right = 1060.0
+margin_bottom = 813.0
+rect_scale = Vector2( 0.5, 0.3 )
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Nome" type="RichTextLabel" parent="MENU/ButtonAttack2"]
+margin_left = 80.7754
+margin_top = 28.7415
+margin_right = 329.775
+margin_bottom = 209.741
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 6 )
+custom_colors/default_color = Color( 1, 0.792157, 0, 1 )
+text = "Postura da tartaruga"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="ButtonAttack3" type="TextureButton" parent="MENU"]
+visible = false
+margin_left = 448.0
+margin_top = 704.0
+margin_right = 836.0
+margin_bottom = 877.0
+rect_scale = Vector2( 0.5, 0.3 )
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Nome" type="RichTextLabel" parent="MENU/ButtonAttack3"]
+margin_left = 107.083
+margin_top = 32.5508
+margin_right = 292.083
+margin_bottom = 162.551
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 6 )
+custom_colors/default_color = Color( 1, 0.792157, 0, 1 )
+text = "Postura do urso"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="ButtonAttack4" type="TextureButton" parent="MENU"]
+visible = false
+margin_left = 672.0
+margin_top = 704.0
+margin_right = 1060.0
+margin_bottom = 877.0
+rect_scale = Vector2( 0.5, 0.3 )
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Nome" type="RichTextLabel" parent="MENU/ButtonAttack4"]
+margin_left = 102.122
+margin_top = 25.6799
+margin_right = 330.122
+margin_bottom = 154.68
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 6 )
+custom_colors/default_color = Color( 1, 0.792157, 0, 1 )
+text = "Postura da fenix"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="ButtonAttack5" type="TextureButton" parent="MENU"]
+visible = false
+margin_left = 448.0
+margin_top = 768.0
+margin_right = 836.0
+margin_bottom = 941.0
+rect_scale = Vector2( 0.5, 0.3 )
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Nome" type="RichTextLabel" parent="MENU/ButtonAttack5"]
+margin_left = 150.444
+margin_top = 59.9888
+margin_right = 335.444
+margin_bottom = 149.989
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 6 )
+custom_colors/default_color = Color( 1, 0.792157, 0, 1 )
+text = "???"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="ButtonAttack6" type="TextureButton" parent="MENU"]
+visible = false
+margin_left = 672.0
+margin_top = 768.0
+margin_right = 1060.0
+margin_bottom = 941.0
+rect_scale = Vector2( 0.5, 0.3 )
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Nome" type="RichTextLabel" parent="MENU/ButtonAttack6"]
+margin_left = 154.939
+margin_top = 52.4973
+margin_right = 339.939
+margin_bottom = 142.497
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 6 )
+custom_colors/default_color = Color( 1, 0.792157, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "ITEMS"
+text = "ITEMS"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="ButtonLeave" type="TextureButton" parent="MENU"]
+margin_left = 96.0
+margin_top = 896.0
+margin_right = 484.0
+margin_bottom = 1069.0
+rect_scale = Vector2( 0.5, 0.3 )
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Nome" type="RichTextLabel" parent="MENU/ButtonLeave"]
+margin_left = 154.738
+margin_top = 66.7271
+margin_right = 271.738
+margin_bottom = 156.727
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 6 )
+custom_colors/default_color = Color( 1, 0.792157, 0, 1 )
+text = "RUN"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[connection signal="fight" from="." to="." method="_on_Battle_Scene_fight"]
+[connection signal="pressed" from="MENU/ButtonAttack1" to="." method="_on_ButtonAttack1_pressed"]
+[connection signal="pressed" from="MENU/ButtonAttack2" to="." method="_on_ButtonAttack2_pressed"]
+[connection signal="pressed" from="MENU/ButtonAttack3" to="." method="_on_ButtonAttack3_pressed"]
+[connection signal="pressed" from="MENU/ButtonAttack4" to="." method="_on_ButtonAttack4_pressed"]
+[connection signal="pressed" from="MENU/ButtonAttack5" to="." method="_on_ButtonAttack5_pressed"]
+[connection signal="pressed" from="MENU/ButtonAttack6" to="." method="_on_ButtonAttack6_pressed"]
+[connection signal="pressed" from="MENU/ButtonLeave" to="." method="_on_ButtonLeave_pressed"]
