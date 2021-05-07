@@ -8,7 +8,7 @@
 size = 24
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=2]
 size = 32
 font_data = ExtResource( 2 )
 
@@ -28,9 +28,9 @@ __meta__ = {
 }
 
 [node name="textQuest" type="Label" parent="."]
-margin_left = 9.0
+margin_left = 31.2725
 margin_top = 207.0
-margin_right = 220.0
+margin_right = 242.272
 margin_bottom = 568.0
 custom_fonts/font = SubResource( 1 )
 text = "Teste "
@@ -45,7 +45,7 @@ margin_left = 82.0
 margin_top = 210.0
 margin_right = 296.0
 margin_bottom = 277.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "teste
 "
 autowrap = true
