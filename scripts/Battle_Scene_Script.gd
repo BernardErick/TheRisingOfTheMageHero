@@ -1,10 +1,56 @@
 extends Node2D
 onready var Enemy
 onready var Player
+#parte do wifi
+var client
+var wrapped_client
+var connected = false
+
+var text = ""
 
 signal fight(damage,mana,type)
+func _exit_tree():
+	disconnect_from_server()
+func connect_to_server():
+	var ip = "192.168.0.6"
+	var port = 120
+	print("Connecting to server: %s : %s" % [ip, str(port)])
+	var connect = client.connect_to_host(ip, port)
+	if client.is_connected_to_host():
+		connected = true
+		print("Connected!")
+	
+func disconnect_from_server():
+	connected = false
+	client.disconnect_from_host()
+func poll_server():
+	while client.get_available_bytes() > 0:
+		var msg = client.get_utf8_string(client.get_available_bytes())
+		if msg == null:
+			continue;
+		if msg.length() > 0:
+			print("Texto recebido!")
+			on_text_received(msg)
+
+func on_text_received(text):
+	print("Entrando no metodo de formatação...")
+	if text == '1': #"1"
+		print("Botao ne...",text)
+		_on_ButtonAttack1_pressed()
+	if text == '2': #"2"
+		print("Botao ne...",text)
+		_on_ButtonAttack2_pressed()
+	if text == '3': #"3"
+		print("Botao ne...",text)
+		_on_ButtonAttack3_pressed()
+	if text == '4': #"4"
+		print("Botao ne...",text)
+		_on_ButtonAttack4_pressed()
 
 func _ready():
+	client = StreamPeerTCP.new()
+	client.set_no_delay(true)
+	connect_to_server()
 	if Enemy and Player != null and !Global.IS_FIGHTING:
 		#get_node("Enemy").texture = Enemy.get_node("Sprite").texture
 		if Enemy.name.substr(0,6) == "Goblin":
@@ -33,6 +79,13 @@ func _ready():
 		Player.get_node("HUD").get_child(6).hide()
 	else:
 		print("Aberto para modo teste")
+func _process(delta):
+	if not connected:
+		pass
+	if connected and not client.is_connected_to_host():
+		connected = false
+	if client.is_connected_to_host():
+		poll_server()
 func _physics_process(delta):
 	$HUD/MP_Player.text = str(Global.HP)
 	$HUD/MP_Player.text = str(Global.MP)
